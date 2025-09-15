@@ -177,7 +177,7 @@ export default function FuturePage() {
               Current Development Status
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Project Prometheus is currently in active development. We're building the foundation 
+              Project Prometheus is currently in active development. We&apos;re building the foundation 
               for the future of autonomous scientific discovery.
             </p>
           </div>
@@ -246,7 +246,7 @@ export default function FuturePage() {
           </h2>
           <p className="text-xl text-gray-300 mb-8">
             Be part of the future of scientific discovery. Help us build the tools that will 
-            solve humanity's greatest challenges.
+            solve humanity&apos;s greatest challenges.
           </p>
           <div className="flex justify-center space-x-4">
             <Link 
