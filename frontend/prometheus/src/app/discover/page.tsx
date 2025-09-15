@@ -18,12 +18,12 @@ interface LogEntry {
 }
 
 interface MaterialPoint {
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 interface FinalCandidate {
   formula: string;
-  properties: { [key: string]: any };
+  properties: { [key: string]: unknown };
 }
 
 // --- SVG Icons ---
@@ -49,7 +49,7 @@ const AgentStatusCard: React.FC<{ agent: AgentStatus }> = ({ agent }) => (
     </div>
 );
 
-const CustomTooltip = ({ active, payload, label }: any) => {
+const CustomTooltip = ({ active, payload, label }: unknown) => {
   if (active && payload && payload.length) {
     const data = payload.payload;
     return (
@@ -148,7 +148,7 @@ export default function DiscoverPage() {
         const decoder = new TextDecoder();
         let buffer = '';
 
-        const handleStreamData = (data: any) => {
+        const handleStreamData = (data: unknown) => {
             if (data.agent) {
                 setAgents(prev => prev.map(a => a.name === data.agent ? {...a, status: data.status} : a));
                 if (data.log) addLog(`${data.agent}: ${data.log}`);
@@ -251,7 +251,7 @@ export default function DiscoverPage() {
                         <div>
                             <label className="text-sm font-medium text-gray-400">OpenAI API Key (Optional)</label>
                             <input type="password" value={openaiApiKey} onChange={e => setOpenaiApiKey(e.target.value)} className="w-full mt-1 p-2 bg-gray-800 border border-gray-600 rounded-md text-sm" placeholder="sk-..." />
-                            <p className="text-xs text-gray-500 mt-1">If OpenAI key doesn't work, try with Google Gemini</p>
+                            <p className="text-xs text-gray-500 mt-1">If OpenAI key doesn&apos;t work, try with Google Gemini</p>
                         </div>
                         <div>
                             <label className="text-sm font-medium text-gray-400">Google API Key (Optional)</label>
