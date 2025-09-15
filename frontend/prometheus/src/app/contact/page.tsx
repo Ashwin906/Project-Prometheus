@@ -208,7 +208,7 @@ export default function ContactPage() {
           <div className="mb-12">
             <div className="inline-flex items-center space-x-2 mb-6">
               <IconSparkles className="text-yellow-400 animate-pulse" />
-              <span className="text-yellow-400 font-semibold text-sm uppercase tracking-wider">Let's Connect</span>
+              <span className="text-yellow-400 font-semibold text-sm uppercase tracking-wider">Let&apos;s Connect</span>
               <IconSparkles className="text-yellow-400 animate-pulse" />
             </div>
             
@@ -218,8 +218,8 @@ export default function ContactPage() {
             </h1>
             
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Join the revolution in materials science. Whether you're a researcher, innovator, 
-              or simply curious about the future of discovery, let's build something extraordinary together.
+              Join the revolution in materials science. Whether you&apos;re a researcher, innovator, 
+              or simply curious about the future of discovery, let&apos;s build something extraordinary together.
             </p>
           </div>
 
@@ -252,7 +252,7 @@ export default function ContactPage() {
               Get in <span className="text-sky-400">Touch</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Connect with the mind behind Project Prometheus. Let's discuss collaboration, 
+              Connect with the mind behind Project Prometheus. Let&apos;s discuss collaboration, 
               innovation, and the future of AI-driven scientific discovery.
             </p>
           </div>
@@ -299,8 +299,8 @@ export default function ContactPage() {
             
             <div className="max-w-4xl mx-auto">
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                Project Prometheus represents more than just a tool—it's a vision for the future of scientific discovery. 
-                We're building the infrastructure that will enable humanity to solve its greatest challenges through 
+                Project Prometheus represents more than just a tool—it&apos;s a vision for the future of scientific discovery. 
+                We&apos;re building the infrastructure that will enable humanity to solve its greatest challenges through 
                 intelligent, autonomous materials discovery.
               </p>
               
@@ -338,7 +338,7 @@ export default function ContactPage() {
             </h3>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Accelerating the future of materials discovery through AI. 
-              Building the tools that will solve humanity's greatest challenges.
+              Building the tools that will solve humanity&apos;s greatest challenges.
             </p>
           </div>
           
