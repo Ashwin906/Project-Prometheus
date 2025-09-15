@@ -60,7 +60,7 @@ export default function FuturePage() {
               Our North Star: The <span className="text-sky-400">Autonomous Ship</span> for the Ocean of Discovery
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Projects like Google's GNoME have given us an incredible gift: a near-complete map 
+              Projects like Google&apos;s GNoME have given us an incredible gift: a near-complete map 
               of the known world of stable materials. They show us the continents and coastlines. 
               But a map is only useful if you have a vessel to explore with.
             </p>
@@ -83,16 +83,16 @@ export default function FuturePage() {
               </p>
               <p className="text-gray-300 text-lg leading-relaxed">
                 Its mission is not to re-visit the shores cataloged by others, but to venture 
-                beyond the map's edge. Using generative AI, Prometheus will learn the fundamental 
+                beyond the map&apos;s edge. Using generative AI, Prometheus will learn the fundamental 
                 laws of chemistry and physics to dream up and design novel materials that have 
-                never existed before—atomic structures conceived by an AI mind to solve humanity's 
+                never existed before—atomic structures conceived by an AI mind to solve humanity&apos;s 
                 greatest challenges.
               </p>
             </div>
             <div className="bg-gradient-to-br from-sky-900/20 to-gray-900/50 rounded-xl p-8 border border-sky-700/50">
               <h3 className="text-xl font-bold text-sky-400 mb-4">The Ultimate Destination</h3>
               <p className="text-gray-300 mb-4">
-                The ultimate destination is a "closed-loop" system where our AI not only designs 
+                The ultimate destination is a &quot;closed-loop&quot; system where our AI not only designs 
                 a new material on Monday but directs a robotic lab to synthesize it on Tuesday 
                 and learns from the real-world results by Wednesday.
               </p>
