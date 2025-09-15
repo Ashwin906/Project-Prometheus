@@ -106,4 +106,4 @@ Free tiers are sufficient for demos; note cold starts and monthly caps.
 
 ## License
 
-MIT (or add your preferred license).
+MIT.
