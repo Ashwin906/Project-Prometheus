@@ -91,7 +91,7 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">
-                The Problem: A Race Against Time We're Losing 🚀
+                The Problem: A Race Against Time We&apos;re Losing 🚀
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Right now, the quest for breakthrough materials—the key to better batteries, 
@@ -99,9 +99,9 @@ export default function LandingPage() {
                 grain of sand on a global beach, by hand.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed">
-                It's a slow, brutally expensive process, often taking scientists over 15 years 
-                and millions of dollars to find just one useful material. This pace isn't just 
-                slow; it's a critical bottleneck that puts our climate goals dangerously out of reach.
+                It&apos;s a slow, brutally expensive process, often taking scientists over 15 years 
+                and millions of dollars to find just one useful material. This pace isn&apos;t just 
+                slow; it&apos;s a critical bottleneck that puts our climate goals dangerously out of reach.
               </p>
             </div>
             <div className="bg-gradient-to-br from-red-900/20 to-gray-900/50 rounded-xl p-8 border border-red-700/50">
@@ -159,14 +159,14 @@ export default function LandingPage() {
                 The Solution: An AI Scientist That Never Sleeps
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                Project Prometheus isn't just another search tool; it's an autonomous AI scientist 
-                in a box. We've assembled a dream team of specialized AI agents who work together 
+                Project Prometheus isn&apos;t just another search tool; it&apos;s an autonomous AI scientist 
+                in a box. We&apos;ve assembled a dream team of specialized AI agents who work together 
                 to automate the entire scientific discovery process.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed">
                 Instead of a human manually testing a few ideas, our AI team can intelligently 
                 explore millions of possibilities, understand complex trade-offs, and invent novel 
-                materials that don't exist in any database.
+                materials that don&apos;t exist in any database.
               </p>
             </div>
           </div>
