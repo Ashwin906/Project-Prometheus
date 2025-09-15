@@ -1,0 +1,15 @@
+# API Keys Configuration
+# Copy this file to .env and fill in your actual API keys
+
+# OpenAI API Key (for GPT models)
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Google Gemini API Key (for Gemini models)
+GOOGLE_API_KEY=your_google_api_key_here
+
+# Materials Project API Key
+MP_API_KEY=your_materials_project_api_key_here
+
+# Model Selection (openai or gemini)
+DEFAULT_MODEL_PROVIDER=gemini
+

@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-dotenv
+langchain
+langchain-openai
+langchain-google-genai
+langgraph
+pandas
+pymatgen
+mp-api
+pymoo
+scikit-learn
+sse-starlette
+# langgraph-checkpoint-sqlite  # Temporarily disabled due to context manager issues
+google-generativeai

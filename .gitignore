@@ -1,0 +1,58 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+
+# Env / secrets
+.env
+*.env
+*.env.*
+backend/.env
+backend/.env.*
+frontend/prometheus/.env.local
+frontend/prometheus/.env
+frontend/prometheus/.env.*
+
+# Backend optional/backup files
+backend/main_backup.py
+backend/main_clean.py
+backend/main_simple.py
+backend/main_minimal.py
+
+# Node / Next.js
+frontend/node_modules/
+frontend/prometheus/node_modules/
+frontend/prometheus/.next/
+frontend/prometheus/.turbo/
+.next/
+node_modules/
+
+# Build outputs
+build/
+dist/
+
+# Databases
+*.sqlite
+*.db
+
+# Others
+.ipynb_checkpoints/
+.coverage
+coverage/
+**/tmp/
+**/temp/
