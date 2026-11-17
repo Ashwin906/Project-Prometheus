@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Project Prometheus - AI Materials Discovery",
-  description: "The AI scientist that never sleeps. Accelerate materials discovery from 15 years to minutes with our multi-agent AI system.",
+  title: "Prometheus · Multi-agent materials discovery",
+  description:
+    "Prometheus turns a research goal into structured objectives, queries the Materials Project, computes a Pareto front, and scores candidate materials for feasibility.",
 };
 
 export default function RootLayout({
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-canvas text-fg antialiased`}
       >
         {children}
       </body>
