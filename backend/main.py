@@ -1534,11 +1534,17 @@ async def discover(request: Request):
         if not user_goal:
             raise HTTPException(status_code=400, detail="Missing goal parameter.")
         
-        # Check if at least one LLM API key is available (from user input or .env file)
+        # Credentials are supplied by the person running the query from the
+        # console. Server-side variables are only a local-development fallback.
         if not any([openai_api_key, google_api_key]):
             raise HTTPException(
-                status_code=400, 
-                detail="At least one LLM API key required. Please provide openaiApiKey or googleApiKey in the request, or set OPENAI_API_KEY or GOOGLE_API_KEY in your .env file."
+                status_code=400,
+                detail="Provide a Google Gemini or OpenAI API key with the request to start a run."
+            )
+        if not mp_api_key:
+            raise HTTPException(
+                status_code=400,
+                detail="Provide a Materials Project API key with the request to query materials data."
             )
 
         # Set environment variables for this request (prioritize user input)
@@ -1588,6 +1594,9 @@ async def discover(request: Request):
 
         return EventSourceResponse(event_stream())
 
+    except HTTPException:
+        # Client-side mistakes should stay 4xx so the console can show the reason.
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
