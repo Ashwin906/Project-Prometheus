@@ -19,10 +19,5 @@ services:
         value: 3.12.11
       - key: DEFAULT_MODEL_PROVIDER
         value: gemini
-      # Prompted for during Blueprint creation. Do not commit real keys.
-      - key: GOOGLE_API_KEY
-        sync: false
-      - key: MP_API_KEY
-        sync: false
-      - key: OPENAI_API_KEY
-        sync: false
+      # No provider keys are stored here. Visitors supply their own Gemini or
+      # OpenAI key plus a Materials Project key from the /discover console.
