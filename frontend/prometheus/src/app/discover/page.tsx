@@ -305,7 +305,9 @@ export default function DiscoverPage() {
             <div>
               <h2 className="text-[13px] font-medium text-fg">Credentials</h2>
               <p className="mt-1 text-[12px] leading-relaxed text-fg-subtle">
-                Passed to the backend with each run. Nothing is stored.
+                You supply your own keys for each session. This deployment holds no shared keys,
+                and nothing you enter is stored. Requests go over HTTPS to the backend and are
+                discarded when the run ends.
               </p>
             </div>
 
