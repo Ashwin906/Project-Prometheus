@@ -121,6 +121,31 @@ async def send_update(session_id: str, data: dict):
     except Exception as e:
         print(f"Error sending update: {e}")
 
+# Google retires Gemini model IDs for new API keys without notice, so the
+# analyst walks this list and moves on when a model reports NOT_FOUND.
+GEMINI_MODEL_FALLBACKS = (
+    "gemini-3.1-pro-preview",
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+)
+
+
+def gemini_model_candidates() -> List[str]:
+    """Configured model first, then the bundled fallbacks."""
+    configured = os.getenv("GEMINI_MODEL", "").strip()
+    candidates = [configured] if configured else []
+    for name in GEMINI_MODEL_FALLBACKS:
+        if name not in candidates:
+            candidates.append(name)
+    return candidates
+
+
+def is_model_unavailable(error: Exception) -> bool:
+    """True when Google rejected the model ID rather than the request."""
+    text = str(error).lower()
+    return "not_found" in text or "not found" in text or "no longer available" in text
+
+
 async def goal_analyst_node(state: AgentState):
     session_id = state['session_id']
     await send_update(session_id, {"agent": "Epimetheus", "status": "thinking", "log": "Parsing your request..."})
@@ -258,16 +283,26 @@ async def goal_analyst_node(state: AgentState):
                 
         if model_provider == "gemini" and google_key:
             # Google Gemini implementation
-            llm = ChatGoogleGenerativeAI(
-                model="gemini-2.5-pro",
-                temperature=0,
-                google_api_key=google_key
-            )
-            structured_llm = llm.with_structured_output(FormalObjectives)
-            response = await structured_llm.ainvoke(prompt)
-            
-            await send_update(session_id, {"agent": "Epimetheus", "status": "success", "log": "Objectives & constraints identified."})
-            return {"formalized_objectives": response.model_dump()}
+            last_error: Optional[Exception] = None
+            for model_name in gemini_model_candidates():
+                try:
+                    llm = ChatGoogleGenerativeAI(
+                        model=model_name,
+                        temperature=0,
+                        google_api_key=google_key
+                    )
+                    structured_llm = llm.with_structured_output(FormalObjectives)
+                    response = await structured_llm.ainvoke(prompt)
+
+                    await send_update(session_id, {"agent": "Epimetheus", "status": "success", "log": f"Objectives & constraints identified with {model_name}."})
+                    return {"formalized_objectives": response.model_dump()}
+                except Exception as model_error:
+                    last_error = model_error
+                    if not is_model_unavailable(model_error):
+                        raise
+                    await send_update(session_id, {"agent": "Epimetheus", "status": "warning", "log": f"Model {model_name} is unavailable to this key; trying the next model."})
+
+            raise last_error or Exception("No Gemini model is available for this API key")
         else:
             raise Exception("No valid LLM API key available")
         
